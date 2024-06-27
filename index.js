@@ -76,7 +76,7 @@ async function callGemini(prompt) {
     // Send the prompt to the model
     const result = await chat.sendMessage([
       { 
-        text: "answer only based on the content of the uploaded story"
+        text: "answer only based on the content of the uploaded data file"
       }, 
       { 
         text: prompt
@@ -95,7 +95,7 @@ async function callGemini(prompt) {
     return responseText;
   } catch (error) {
     console.error("Error calling Gemini:", error);
-    return error;
+    return error.message;
   }
 }
 
